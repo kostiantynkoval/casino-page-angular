@@ -1,0 +1,9 @@
+div {
+  color: #ffffff;
+  text-transform: uppercase;
+  margin: 0 20px;
+  font-size: .8rem;
+}
+div i {
+  margin: 0 5px;
+}

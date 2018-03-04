@@ -1,0 +1,4 @@
+  <div class="button-outer cursor-pointer" [ngStyle]="{'background-color': bgColorCode}">
+    <div #shadow class="button-shadow-container"></div>
+    <div class="button-inner" [ngStyle]="{'color': textColor}"><i *ngIf="icon" [class]="icon"></i>{{title}}</div>
+  </div>

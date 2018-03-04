@@ -1,0 +1,14 @@
+.swiper-slide {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.front-image-wrapper {
+  position: relative;
+  max-width: 70vw;
+}
+.swipper-front-image {
+  position: relative;
+  max-width: 100%;
+}

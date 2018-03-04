@@ -1,0 +1,72 @@
+.game-type-buttons {
+  position: relative;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+}
+game-white-button {
+  display: flex;
+  flex-flow: row nowrap;
+  width: 20%;
+}
+.sort-search-panel {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.sorting .sort-title {
+  padding: .5rem 0;
+  color: white;
+  text-transform: uppercase;
+}
+.sorting .sort-title span {
+  font-weight: 400;
+}
+.sorting .sort-title span:first-child {
+  font-weight: 200;
+}
+.searching {
+  background-color: black;
+}
+.searching input {
+  border: none;
+  background-color: black;
+  outline: none;
+  padding: .5rem;
+  color: white;
+  margin: 0;
+}
+.searching i {
+  color: #333333;
+  margin: .5rem;
+}
+
+.games-list {
+  position: relative;
+  margin-top: 0.5rem;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-content: center;
+  align-items: flex-start;
+}
+
+promo-slider {
+  max-width: 386px;
+  max-height: 280px;
+  position: static;
+  top:0;
+  right: 0;
+}
+
+
+.more-games-button {
+  display: flex;
+  height: 90px;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}

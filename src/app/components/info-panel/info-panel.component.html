@@ -1,0 +1,35 @@
+<div class="header-container">
+  <div class="info-panel-wrapper">
+  <section class="last-winners-slider">
+    <span class="last-winners-title">last winners</span>
+    <swiper [config]="config">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"
+          *ngFor="let game of games"
+          data-swiper-autoplay="3000">
+          <div class="front-left-side">
+            <img class="swipper-left-image" [src]="game.image">
+          </div>
+          <div class="front-right-side">
+            <div class="game-name">{{game.gameName}}</div>
+            <div class="win-amount">{{game.amount | number:'.2'}}$</div>
+            <div class="player-name">{{game.playerName}}</div>
+          </div>
+        </div>
+      </div>
+      <!--<div class="swiper-pagination"></div>-->
+    </swiper>
+
+    <div class="swiper-btn cursor-pointer swiper-btn-next"><i class="fas fa-chevron-right"></i></div>
+    <div class="swiper-btn cursor-pointer swiper-btn-prev"><i class="fas fa-chevron-left"></i></div>
+
+  </section>
+  <section class="jackpot-info">
+    <span class="jackpot-info-title">jackpot</span>
+    <div class="jackpot-line">
+      <jackpot *ngFor="let jackpot of jackpots" [image]="jackpot.coinImage" [amount]="jackpot.value" ></jackpot>
+    </div>
+
+  </section>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+nav {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+ul {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+li a {
+  padding: 0 10px;
+  color: #999999;
+  font-size: 0.625rem;
+  text-transform: uppercase;
+  text-decoration: none;
+}

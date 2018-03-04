@@ -1,0 +1,22 @@
+<section class="game-type-buttons">
+  <game-white-button *ngFor="let button of buttons" [icon]="button.className" [title]="button.name"></game-white-button>
+</section>
+<section class="sort-search-panel">
+  <div class="sorting">
+    <div class="sort-title">
+      <span>sort by: </span>
+      <span #popularity class="cursor-pointer" (click)="chooseSorting('popularity')">popularity</span> |
+      <span #alphabet class="cursor-pointer" (click)="chooseSorting('alphabet')">a-z</span>
+    </div>
+  </div>
+  <div class="searching">
+    <div><input [(ngModel)]="searchStr" type="text" placeholder="Search for game..."><i (click)="initSearch()" class="fas fa-search"></i></div>
+  </div>
+</section>
+<section class="games-list">
+  <game-window-small *ngFor="let game of games" [game]="game"></game-window-small>
+  <promo-slider></promo-slider>
+</section>
+<section class="more-games-button">
+  <game-button [title]="'more games'" [bgColor]="'blue'"></game-button>
+</section>

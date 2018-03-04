@@ -1,0 +1,40 @@
+:host {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+section {
+  position: relative;
+  width: 180px;
+  height: 123px;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+section img {
+  max-width: 100%;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+section .fader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 22;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+section + div {
+  text-transform: uppercase;
+  color: white;
+  font-weight: 200;
+  font-size: .8rem;
+}
+

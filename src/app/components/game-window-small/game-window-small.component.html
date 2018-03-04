@@ -1,0 +1,10 @@
+<section>
+  <img [src]="game.image" alt="">
+  <div *ngIf="hoverStatus !== 'void'" class="fader">
+    <div [@toggleHeight]="hoverStatus" class="buttons-wrapper">
+      <game-button [title]="'play now'" [bgColor]="'blue'"></game-button>
+      <game-button [title]="'demo'" [bgColor]="'red'"></game-button>
+    </div>
+  </div>
+</section>
+<div>{{game.name}}</div>

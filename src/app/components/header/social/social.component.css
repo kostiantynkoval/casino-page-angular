@@ -1,0 +1,21 @@
+:host {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+  align-items: center;
+}
+.i-wrapper {
+  margin: 5px;
+  background-color: #666666;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 5px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.i-wrapper i {
+  font-size: .8rem;
+  color: #fff;
+}

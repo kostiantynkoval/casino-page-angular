@@ -1,0 +1,54 @@
+
+.button-outer .button-shadow-container {
+  position: absolute;
+  top: -.25rem;
+  left: -1.5rem;
+  width: 11rem;
+  height: 2.2rem;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: flex-end;
+  transition: opacity .2s;
+  opacity: 0.6;
+  background-image: url('/assets/images/fog_hovered.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.button-outer {
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  margin: 0 1rem;
+  border-radius: 4px;
+  opacity: 0.6;
+  flex-grow: 0;
+  transition: opacity .2s;
+}
+.button-outer:hover {
+  opacity: 1;
+}
+.button-outer:hover .button-shadow-container {
+  opacity: 1;
+}
+
+.button-inner {
+  box-sizing: border-box;
+  margin: 0.2rem;
+  padding: 0 .8rem 1px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  font-size: .925rem;
+  border: 1px solid white;
+  border-radius: 2px;
+  text-transform: uppercase;
+}
+.button-inner i {
+  margin: 0 5px;
+}

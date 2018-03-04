@@ -1,0 +1,109 @@
+:host {
+  width: 100vw;
+  display: block;
+
+}
+section.app-container {
+  max-width: 1024px;
+  position: relative;
+  margin: 0 auto;
+}
+header {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  background-color: rgba(17,17,17,.95);
+  z-index: 1;
+}
+div.header-container {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 1024px;
+}
+app-menu {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  flex: 0 1 50%;
+}
+section.top-menu-other-half {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+  align-items: center;
+  flex: 0 1 50%;
+}
+app-quick-registration {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+  align-items: center;
+}
+app-social {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+  align-items: center;
+}
+app-language {
+  margin-left: 15px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+/*Registration & logo row*/
+section.registration {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(17,17,17,.95);
+}
+div.reg-form-wrapper {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+div.input-wrapper {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+section.registration input {
+  border: none;
+  max-width: 6.6rem;
+  border-radius: 4px;
+  margin: 0 5px;
+  font-size: 0.8rem;
+  font-style: italic;
+  color: #ffffff;
+  background-color: rgb(160,62,62);
+  padding: .4rem .6rem;
+  outline: none;
+}
+section.registration small a {
+  text-decoration: none;
+  font-style: italic;
+  font-size: .7rem;
+  color: goldenrod;
+  transition: color 0.2s;
+}
+section.registration small a:hover {
+  color: gold;
+}
+
+.copyright {
+  text-align: center;
+  text-transform: uppercase;
+  margin: 0 1rem;
+  color: #bbbbbb;
+}

@@ -1,0 +1,10 @@
+.payments {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  height: 104px;
+}
+.payments img {
+  margin: 0 1rem;
+}

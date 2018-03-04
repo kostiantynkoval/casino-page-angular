@@ -1,0 +1,21 @@
+.menu-bottom {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  height: 63px;
+}
+.menu-bottom span:not(:first-of-type) {
+  margin-left: 1rem;
+}
+.menu-bottom span:not(:last-of-type):after {
+  content: '|';
+  color: #bbbbbb;
+  margin-left: 1rem;
+}
+.menu-bottom span a {
+  text-decoration: none;
+  color: #bbbbbb;
+  text-transform: uppercase;
+
+}

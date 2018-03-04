@@ -1,0 +1,21 @@
+<section class="title">
+  <span>promotions</span>
+</section>
+<swiper class="swiper" [config]="config">
+  <div class="swiper-wrapper">
+    <div
+      class="swiper-slide"
+      *ngFor="let image of images"
+      data-swiper-autoplay="3500"
+      [ngStyle]="{'background': 'url(/'+image+') no-repeat center/cover'}">
+      <div class="front-text-wrapper">
+        <h2>Reach for the stars<br /> with up to 200 free spins</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam atque dolor et facilis ipsam iusto natus.</p>
+      </div>
+
+    </div>
+  </div>
+  <div class="my-pagination"></div>
+  <!--<div class="swiper-button-next"></div>-->
+  <!--<div class="swiper-button-prev"></div>-->
+</swiper>
