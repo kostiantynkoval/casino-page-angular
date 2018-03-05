@@ -1,19 +1,96 @@
+<div class="fader"></div>
 <section class="modal-registration">
   <h2>registration</h2>
-  <label>* Indicates required fields</label>
-  <form action="">
-    <label for=""><input type="text"></label>
-    <small><div>!</div> This field cannot be blank</small>
-    <label for=""><input type="text"></label>
-    <small><div>!</div> This field cannot be blank</small>
-    <label for=""><input type="text"></label>
-    <small><div>!</div> This field cannot be blank</small><i class="fas fa-plus-square"></i>
-    <label for=""><input type="text"></label>
-    <small><div>!</div> This field cannot be blank</small>
-    <label for=""><input type="text"></label>
-    <small><div>!</div> This field cannot be blank</small>
-    <game-button [title]="'submit'" [bgColor]="'blue'"></game-button>
+  <label><span class="star">*</span> Indicates required fields</label>
+  <form [formGroup]="form">
+    <div class="form-control-wrapper">
+      <div class="form-control-row">
+        <label for="username">Name<span class="star">*</span>:</label>
+        <div>
+          <input [ngClass]="{'danger': !form.get('name').valid && form.get('name').touched}" formControlName="name" id="username" type="text">
+          <small *ngIf="form.get('name').hasError('required')  && form.get('name').touched">
+            <div>!</div>
+            Name field cannot be blank
+          </small>
+        </div>
+      </div>
+    </div>
+    <div class="form-control-wrapper">
+      <div class="form-control-row">
+        <label for="email">Email<span class="star">*</span>:</label>
+        <div>
+          <input [ngClass]="{'danger': !form.get('email').valid && form.get('email').touched}" formControlName="email" id="email" type="text">
+          <small *ngIf="form.get('email').hasError('required') && form.get('email').touched">
+            <div>!</div>
+            Email field cannot be blank
+          </small>
+          <small *ngIf="form.get('email').hasError('pattern') && form.get('email').touched">
+            <div>!</div>
+            This email is not valid
+          </small>
+        </div>
+      </div>
+    </div>
+    <div class="form-control-wrapper">
+      <div class="form-control-row">
+        <label for="ids">Ids<span class="star">*</span>:</label><div>
+        <span class="ids-span"><input [ngClass]="{'danger': !form.get('ip').valid && form.get('ip').touched}" formControlName="ip" id="ids" type="text"><span (click)="addIp()" class="cursor-pointer"><i class="fas fa-plus-square"></i> add IP</span></span>
+        <small *ngIf="noIps">
+          <div>!</div>
+          The IPs list cannot be empty
+        </small>
+        <small *ngIf="form.get('ip').hasError('pattern') && form.get('ip').touched">
+          <div>!</div>
+          This ip is not valid
+        </small>
+        <div *ngFor="let ip of ips" class="id-item">
+          <span>{{ip}}</span>
+          <span class="cursor-pointer" (click)="removeIP(ip)">remove <i class="fas fa-times"></i></span>
+        </div>
+      </div>
+      </div>
+    </div>
+    <div class="form-control-wrapper">
+      <div class="form-control-row">
+        <label for="password">Password<span class="star">*</span>:</label><div>
+        <input id="password"  [ngClass]="{'danger': !form.get('password').valid && form.get('password').touched}" formControlName="password" type="password">
+        <small *ngIf="form.get('password').hasError('required') && form.get('password').touched">
+          <div>!</div>
+          This field cannot be blank
+        </small>
+        <small *ngIf="form.get('password').hasError('minLength') && form.get('password').touched">
+          <div>!</div>
+          Password should contain min 6 chars
+        </small>
+        <small *ngIf="form.get('password').hasError('maxLength') && form.get('password').touched">
+          <div>!</div>
+          Password should contain max 16 chars
+        </small>
+        <small *ngIf="form.get('password').hasError('pattern') && !form.get('password').hasError('minLength') && !form.get('password').hasError('maxLength') && form.get('password').touched">
+          <div>!</div>
+          Password should contain one small letter one capital letter and one number
+        </small>
+      </div>
+      </div>
+    </div>
+    <div class="form-control-wrapper">
+      <div class="form-control-row">
+        <label for="password_confirm">Confirm password<span class="star">*</span>:</label>
+        <div>
+          <input id="password_confirm"  [ngClass]="{'danger': !form.get('password_confirm').valid && form.get('password_confirm').touched}" formControlName="password_confirm" type="password">
+          <small *ngIf="form.get('password_confirm').hasError('required') && form.get('password_confirm').touched">
+            <div>!</div>
+            This field cannot be blank
+          </small>
+          <small *ngIf="isMismatched">
+            <div>!</div>
+            Password don't match
+          </small>
+        </div>
+      </div>
+    </div>
+    <game-button (click)="submitForm()" [title]="'submit'" [bgColor]="'blue'"></game-button>
   </form>
-  <div><i class="fas fa-times"></i></div>
+  <div class="close-btn cursor-pointer"><i class="fas fa-times"></i>&nbsp;CLOSE</div>
 </section>
 

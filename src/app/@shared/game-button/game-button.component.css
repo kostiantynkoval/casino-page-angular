@@ -1,8 +1,8 @@
 
 .button-outer .button-shadow-container {
   position: absolute;
-  top: -.25rem;
-  left: -1.5rem;
+  /*top: -.25rem;*/
+  /*left: -1.5rem;*/
   width: 11rem;
   height: 2.2rem;
   display: flex;

@@ -14,7 +14,7 @@
     <div class="logo"><img [src]="'assets/images/logo.png'" alt=""></div>
   </div>
   <div class="reg-form-wrapper">
-    <game-button [title]="'registration'" [bgColor]="'blue'"></game-button>
+    <game-button (click)="openModal()" [title]="'registration'" [bgColor]="'blue'"></game-button>
     <div class="input-wrapper">
       <input type="text" placeholder="Username">
     </div>
@@ -39,3 +39,7 @@
     <div class="copyright">@ 2015 all rights reserved</div>
   </footer>
 </section>
+
+
+<!--Modal-->
+<registration-modal *ngIf="modalStatus !== 'void'" [@toggleHeight]="modalStatus"></registration-modal>

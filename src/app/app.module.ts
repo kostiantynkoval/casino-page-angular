@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import {AppRoutingModule} from "@app/app-routing.module";
 import { SwiperModule } from 'angular2-useful-swiper';
 
@@ -47,6 +47,7 @@ import { RegistrationModalComponent } from './components/registration-modal/regi
     BrowserAnimationsModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     SwiperModule,
     SharedModule.forRoot()
   ],

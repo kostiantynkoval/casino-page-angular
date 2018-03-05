@@ -31,6 +31,12 @@ section .fader {
   justify-content: center;
   align-items: center;
 }
+.buttons-wrapper {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
 section + div {
   text-transform: uppercase;
   color: white;
