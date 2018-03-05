@@ -1,7 +1,8 @@
 :host {
-  width: 100vw;
-  display: block;
-
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
 }
 section.app-container {
   max-width: 1024px;

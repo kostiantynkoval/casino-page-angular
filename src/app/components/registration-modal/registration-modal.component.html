@@ -1,5 +1,5 @@
-<div class="fader"></div>
-<section class="modal-registration">
+<div (click)="closeForm()" class="fader"></div>
+<section [@toggleHeight]="animState" class="modal-registration">
   <h2>registration</h2>
   <label><span class="star">*</span> Indicates required fields</label>
   <form [formGroup]="form">
@@ -33,9 +33,13 @@
     </div>
     <div class="form-control-wrapper">
       <div class="form-control-row">
-        <label for="ids">Ids<span class="star">*</span>:</label><div>
-        <span class="ids-span"><input [ngClass]="{'danger': !form.get('ip').valid && form.get('ip').touched}" formControlName="ip" id="ids" type="text"><span (click)="addIp()" class="cursor-pointer"><i class="fas fa-plus-square"></i> add IP</span></span>
-        <small *ngIf="noIps">
+        <label for="ids">IPs<span class="star">*</span>:</label><div>
+        <span class="ids-span"><input [ngClass]="{'danger': (!form.get('ip').valid && form.get('ip').touched) || noIps && form.get('ip').touched && form.get('ip').pristine}" formControlName="ip" id="ids" type="text"><span (click)="addIp()" class="cursor-pointer"><i class="fas fa-plus-square"></i> add IP</span></span>
+        <small *ngIf="isIpEmpty && form.get('ip').touched && form.get('ip').pristine">
+          <div>!</div>
+          Enter IP please
+        </small>
+        <small *ngIf="!form.get('ip').hasError('pattern') && noIps && form.get('ip').touched">
           <div>!</div>
           The IPs list cannot be empty
         </small>
@@ -58,17 +62,17 @@
           <div>!</div>
           This field cannot be blank
         </small>
-        <small *ngIf="form.get('password').hasError('minLength') && form.get('password').touched">
+        <small *ngIf="form.get('password').hasError('minlength') && form.get('password').touched">
           <div>!</div>
           Password should contain min 6 chars
         </small>
-        <small *ngIf="form.get('password').hasError('maxLength') && form.get('password').touched">
+        <small *ngIf="form.get('password').hasError('maxlength') && form.get('password').touched">
           <div>!</div>
           Password should contain max 16 chars
         </small>
-        <small *ngIf="form.get('password').hasError('pattern') && !form.get('password').hasError('minLength') && !form.get('password').hasError('maxLength') && form.get('password').touched">
+        <small *ngIf="form.get('password').hasError('pattern') && !form.get('password').hasError('minlength') && !form.get('password').hasError('maxlength') && form.get('password').touched">
           <div>!</div>
-          Password should contain one small letter one capital letter and one number
+          Password should start with letter and contain small letters, capital letters or numbers
         </small>
       </div>
       </div>
@@ -89,8 +93,8 @@
         </div>
       </div>
     </div>
-    <game-button (click)="submitForm()" [title]="'submit'" [bgColor]="'blue'"></game-button>
+    <game-button type="submit" (click)="submitForm()" [title]="'submit'" [bgColor]="'blue'"></game-button>
   </form>
-  <div class="close-btn cursor-pointer"><i class="fas fa-times"></i>&nbsp;CLOSE</div>
+  <div (click)="closeForm()" class="close-btn cursor-pointer"><i class="fas fa-times"></i>&nbsp;CLOSE</div>
 </section>
 

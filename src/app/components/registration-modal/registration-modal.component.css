@@ -10,7 +10,8 @@
   justify-content: center;
 }
 .modal-registration {
-  position: absolute;
+  position: fixed;
+  overflow: hidden;
   max-width: 488px;
   top: 10vh;
   width: 80vw;

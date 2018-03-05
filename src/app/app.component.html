@@ -42,4 +42,4 @@
 
 
 <!--Modal-->
-<registration-modal *ngIf="modalStatus !== 'void'" [@toggleHeight]="modalStatus"></registration-modal>
+<registration-modal (close)="closeModal()" *ngIf="modalStatus!=='void'" [animState]="modalStatus"></registration-modal>
