@@ -10,7 +10,7 @@ const routes: Routes = [
   { path: 'bonuses', component: InProgressComponent },
   { path: 'mobile', component: InProgressComponent },
   { path: 'contacts', component: InProgressComponent },
-  { path: '', redirectTo: '/contacts', pathMatch: 'full' },
+  { path: '', redirectTo: '/all-games', pathMatch: 'full' },
 ];
 
 @NgModule({
