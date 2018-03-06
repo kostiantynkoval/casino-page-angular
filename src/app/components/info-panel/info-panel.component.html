@@ -2,7 +2,7 @@
   <div class="info-panel-wrapper">
   <section class="last-winners-slider">
     <span class="last-winners-title">last winners</span>
-    <swiper [config]="config">
+    <swiper #usefulSwiper [config]="config">
       <div class="swiper-wrapper">
         <div class="swiper-slide"
           *ngFor="let game of games"
@@ -20,8 +20,8 @@
       <!--<div class="swiper-pagination"></div>-->
     </swiper>
 
-    <div class="swiper-btn cursor-pointer swiper-btn-next"><i class="fas fa-chevron-right"></i></div>
-    <div class="swiper-btn cursor-pointer swiper-btn-prev"><i class="fas fa-chevron-left"></i></div>
+    <div (click)="callNext()" class="swiper-btn cursor-pointer swiper-btn-next"><i class="fas fa-chevron-right"></i></div>
+    <div (click)="callPrev()" class="swiper-btn cursor-pointer swiper-btn-prev"><i class="fas fa-chevron-left"></i></div>
 
   </section>
   <section class="jackpot-info">

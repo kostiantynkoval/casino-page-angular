@@ -3,6 +3,10 @@ div {
   text-transform: uppercase;
   margin: 0 20px;
   font-size: .8rem;
+  transition: color .2s;
+}
+div:hover {
+  color: #bbbbbb;
 }
 div i {
   margin: 0 5px;

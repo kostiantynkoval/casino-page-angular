@@ -27,7 +27,6 @@
   flex-flow: row nowrap;
   justify-content: center;
   align-items: stretch;
-  margin: 0 1rem;
   border-radius: 4px;
   opacity: 0.6;
   transition: opacity .2s;

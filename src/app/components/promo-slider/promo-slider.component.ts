@@ -1,4 +1,5 @@
-import { Component, OnInit, ElementRef } from '@angular/core';
+import {Component, OnInit, ElementRef, ViewChild} from '@angular/core';
+import {SwiperComponent} from "angular2-useful-swiper";
 
 @Component({
   selector: 'promo-slider',
@@ -7,6 +8,7 @@ import { Component, OnInit, ElementRef } from '@angular/core';
 })
 export class PromoSliderComponent implements OnInit {
 
+  @ViewChild('usefulSwiper') usefulSwiper: SwiperComponent;
   images: string[];
   config: any = {
     speed: 1000,

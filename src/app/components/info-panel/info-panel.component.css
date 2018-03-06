@@ -27,16 +27,23 @@ swiper {
   font-size: 1.8rem;
   width: 20px;
   color: #bbbbbb;
+  transition: color .2s;
 }
 .swiper-btn.swiper-btn-next {
   position: absolute;
   top: 2.625rem;
   right: .8rem;
 }
+.swiper-btn.swiper-btn-next:hover {
+  color: #eeeeee;
+}
 .swiper-btn.swiper-btn-prev {
   position: absolute;
-  top: 2.625rem;;
+  top: 2.625rem;
   left: 0;
+}
+.swiper-btn.swiper-btn-prev:hover {
+  color: #eeeeee;
 }
 .swiper-slide {
   width: 131px;

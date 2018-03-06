@@ -1,8 +1,9 @@
-<section>
+<section (mouseenter)="onMouseOver()" (mouseleave)="onMouseOut()">
   <img [src]="game.image" alt="">
-  <div *ngIf="hoverStatus !== 'void'" class="fader">
-    <div [@toggleHeight]="hoverStatus" class="buttons-wrapper">
+  <div *ngIf="hoverStatus !== 'void'" [@toggleOpacity]="hoverStatus" class="fader">
+    <div class="buttons-wrapper">
       <game-button [title]="'play now'" [bgColor]="'blue'"></game-button>
+      <div></div>
       <game-button [title]="'demo'" [bgColor]="'red'"></game-button>
     </div>
   </div>

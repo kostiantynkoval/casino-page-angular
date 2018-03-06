@@ -19,11 +19,16 @@ game-white-button {
 }
 .sorting .sort-title {
   padding: .5rem 0;
-  color: white;
   text-transform: uppercase;
+  color: #ffffff;
 }
 .sorting .sort-title span {
   font-weight: 400;
+  color: #ffffff;
+  transition: color .2s;
+}
+.sorting .sort-title span:not(:first-child):hover {
+  color: #cccccc;
 }
 .sorting .sort-title span:first-child {
   font-weight: 200;
@@ -65,7 +70,6 @@ promo-slider {
 .games-list {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  grid-gap: 10px;
   /*grid-auto-rows: minmax(100px, auto);*/
 }
 promo-slider {

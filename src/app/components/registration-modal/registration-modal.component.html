@@ -34,18 +34,26 @@
     <div class="form-control-wrapper">
       <div class="form-control-row">
         <label for="ids">IPs<span class="star">*</span>:</label><div>
-        <span class="ids-span"><input [ngClass]="{'danger': (!form.get('ip').valid && form.get('ip').touched) || noIps && form.get('ip').touched && form.get('ip').pristine}" formControlName="ip" id="ids" type="text"><span (click)="addIp()" class="cursor-pointer"><i class="fas fa-plus-square"></i> add IP</span></span>
-        <small *ngIf="isIpEmpty && form.get('ip').touched && form.get('ip').pristine">
+        <span class="ids-span"><input [ngClass]="{'danger': (!form.get('ip').valid && form.get('ip').touched) || noIps || isIpEmpty || isIpExists || isIpsexceed }" formControlName="ip" id="ids" type="text"><span (click)="addIp()" class="cursor-pointer"><i class="fas fa-plus-square"></i> add IP</span></span>
+        <small *ngIf="isIpEmpty">
           <div>!</div>
           Enter IP please
         </small>
-        <small *ngIf="!form.get('ip').hasError('pattern') && noIps && form.get('ip').touched">
+        <small *ngIf="noIps && form.get('ip').touched">
           <div>!</div>
           The IPs list cannot be empty
         </small>
         <small *ngIf="form.get('ip').hasError('pattern') && form.get('ip').touched">
           <div>!</div>
           This ip is not valid
+        </small>
+        <small *ngIf="isIpExists">
+          <div>!</div>
+          Enter IP already exists in the list
+        </small>
+        <small *ngIf="isIpsexceed">
+          <div>!</div>
+          No more than 5 IPs allowed
         </small>
         <div *ngFor="let ip of ips" class="id-item">
           <span>{{ip}}</span>

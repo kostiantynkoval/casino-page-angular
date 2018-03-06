@@ -17,6 +17,8 @@ export class RegistrationModalComponent implements OnInit {
   isMismatched: boolean;
   noIps: boolean;
   isIpEmpty: boolean;
+  isIpExists: boolean;
+  isIpsexceed: boolean;
   @Input('animState')animState: string;
 
   constructor(private fb: FormBuilder) {
@@ -31,15 +33,38 @@ export class RegistrationModalComponent implements OnInit {
 
   ngOnInit() {
     this.ips = [];
+    this.isIpExists = false;
+    this.isIpsexceed = false;
+
+    this.onChanges();
+  }
+
+  onChanges(): void {
+    this.form.valueChanges.subscribe(() => {
+      this.isIpExists = false;
+      this.isIpsexceed = false;
+      this.isIpEmpty = false;
+      this.noIps = false;
+      console.log('isIpExists', this.isIpExists);
+      console.log('isIpsexceed', this.isIpsexceed);
+      console.log('isIpEmpty', this.isIpEmpty);
+
+    });
   }
 
   addIp() {
     if (this.form.controls.ip.value !== '' && this.form.controls.ip.valid) {
+      this.isIpExists = this.ips.includes(this.form.controls.ip.value);
+      this.isIpsexceed = this.ips.length > 4;
+      if (this.isIpExists || this.isIpsexceed) return;
       this.ips = this.ips.concat(this.form.controls.ip.value);
       this.form.patchValue({'ip': ''});
       this.form.controls['ip'].markAsUntouched();
       this.isIpEmpty = false;
+      this.isIpExists = false;
+      this.isIpsexceed = false;
     } else {
+      console.log('else')
       this.isIpEmpty = true;
     }
 

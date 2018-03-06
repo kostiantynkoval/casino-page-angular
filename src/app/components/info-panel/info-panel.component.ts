@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {RecentGameWin} from "@app/models/recent-game-win.model";
+import {SwiperComponent} from "angular2-useful-swiper";
 
 @Component({
   selector: 'info-panel',
@@ -8,6 +9,7 @@ import {RecentGameWin} from "@app/models/recent-game-win.model";
 })
 export class InfoPanelComponent implements OnInit {
 
+  @ViewChild('usefulSwiper') usefulSwiper: SwiperComponent;
   games: RecentGameWin[];
   jackpots: any[];
   config: any = {
@@ -16,8 +18,8 @@ export class InfoPanelComponent implements OnInit {
     spaceBetween: 5,
     loop: true,
     autoplay: true,
-    nextButton: '.swiper-button-next',
-    prevButton: '.swiper-button-prev',
+    //nextButton: '.swiper-button-next',
+    //prevButton: '.swiper-button-prev',
   };
 
   constructor() { }
@@ -25,6 +27,14 @@ export class InfoPanelComponent implements OnInit {
   ngOnInit() {
     this.loadImages();
     this.getJackpots();
+  }
+
+  callNext() {
+    this.usefulSwiper.swiper.slideNext();
+  }
+
+  callPrev() {
+    this.usefulSwiper.swiper.slidePrev();
   }
 
   loadImages() {

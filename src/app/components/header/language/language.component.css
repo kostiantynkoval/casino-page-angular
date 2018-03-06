@@ -10,10 +10,17 @@
 .wrapper {
   position: relative;
 }
-.wrapper>.current_language {
+.flag + .wrapper>.current_language {
   font-weight: 100;
   color: #555555;
   min-width: 60px;
+  transition: color .2s;
+}
+.flag:hover + .wrapper>.current_language {
+  color: #999999;
+}
+.flag + .wrapper:hover>.current_language {
+  color: #999999;
 }
 .dropdown_list {
   position: absolute;

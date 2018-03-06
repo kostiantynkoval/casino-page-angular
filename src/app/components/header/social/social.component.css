@@ -14,8 +14,16 @@
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
+  transition: background-color .2s;
+}
+.i-wrapper:hover {
+  background-color: #ffffff;
 }
 .i-wrapper i {
   font-size: .8rem;
-  color: #fff;
+  color: #ffffff;
+  transition: color .2s;
+}
+.i-wrapper:hover i {
+  color: #666666;
 }

@@ -1,27 +1,32 @@
-import { Component, OnInit, Input, HostListener } from '@angular/core';
-import { toggleHeight } from "@app/animations";
+import { Component, OnInit, Input } from '@angular/core';
+import { toggleOpacity } from "@app/animations";
 
 @Component({
   selector: 'game-window-small',
   templateUrl: './game-window-small.component.html',
   styleUrls: ['./game-window-small.component.css'],
-  animations: [ toggleHeight ]
+  animations: [ toggleOpacity ]
 })
 export class GameWindowSmallComponent implements OnInit {
 
-  hoverStatus = 'void';
+  hoverStatus: string;
 
   @Input('game') game: any[];
-  @HostListener('mouseover') onMouseOver() {
-    this.hoverStatus = 'in';
-  }
-  @HostListener('mouseout') onMouseOut() {
-    this.hoverStatus = 'void';
-  }
 
   constructor() { }
 
   ngOnInit() {
+    this.hoverStatus = 'void';
+  }
+
+  onMouseOver() {
+    this.hoverStatus = 'in';
+    console.log('in');
+  }
+
+  onMouseOut() {
+    this.hoverStatus = 'void';
+    console.log('out');
   }
 
 }

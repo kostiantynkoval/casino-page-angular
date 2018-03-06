@@ -19,4 +19,8 @@ li a {
   font-size: 0.625rem;
   text-transform: uppercase;
   text-decoration: none;
+  transition: color 0.2s;
+}
+li a:hover {
+  color: #dddddd;
 }

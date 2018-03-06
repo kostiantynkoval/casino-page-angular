@@ -17,5 +17,8 @@
   text-decoration: none;
   color: #bbbbbb;
   text-transform: uppercase;
-
+  transition: color .2s;
+}
+.menu-bottom span a:hover {
+  color: #ffffff;
 }

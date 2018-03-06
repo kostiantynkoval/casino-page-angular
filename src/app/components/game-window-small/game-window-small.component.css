@@ -37,6 +37,9 @@ section .fader {
   justify-content: center;
   align-items: center;
 }
+.buttons-wrapper>div {
+  height: 10px;
+}
 section + div {
   text-transform: uppercase;
   color: white;

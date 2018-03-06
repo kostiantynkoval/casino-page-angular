@@ -1,4 +1,4 @@
-<div class="flag"><img [src]="currentLanguage.image" alt=""></div>
+<div (click)="openDropdown($event)" class="flag"><img [src]="currentLanguage.image" alt=""></div>
 <div class="wrapper">
   <div class="current_language cursor-pointer" (click)="openDropdown($event)">{{currentLanguage.name}} <i class="fas fa-caret-down"></i></div>
   <div *ngIf="langAnimStatus !== 'void'" [@toggleHeight]="langAnimStatus" class="dropdown_list">
