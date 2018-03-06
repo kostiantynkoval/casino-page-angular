@@ -14,8 +14,8 @@
   </div>
 </section>
 <section class="games-list">
-  <game-window-small *ngFor="let game of games" [game]="game"></game-window-small>
   <promo-slider></promo-slider>
+  <game-window-small *ngFor="let game of games" [game]="game"></game-window-small>
 </section>
 <section class="more-games-button">
   <game-button [title]="'more games'" [bgColor]="'blue'"></game-button>

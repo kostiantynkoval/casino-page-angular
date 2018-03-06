@@ -44,7 +44,7 @@ game-white-button {
   margin: .5rem;
 }
 
-.games-list {
+/*.games-list {
   position: relative;
   margin-top: 0.5rem;
   display: flex;
@@ -55,13 +55,23 @@ game-white-button {
 }
 
 promo-slider {
+  float: right;
   max-width: 386px;
   max-height: 280px;
   position: static;
   top:0;
   right: 0;
+}*/
+.games-list {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 10px;
+  /*grid-auto-rows: minmax(100px, auto);*/
 }
-
+promo-slider {
+  grid-column: 4 / 6;
+  grid-row: 1 / 3;
+}
 
 .more-games-button {
   display: flex;
